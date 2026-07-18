@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guestbook — Soma Charan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('mo');</script>
+  <style>
+    /* page-scoped: icon polish for guestbook wall + modal */
+    .gb-note .doodle { color: rgba(255,255,255,.92); }
+    .gb-join .gb-foot .icon { color: rgba(255,255,255,.85); }
+    .oauth-btn .icon { color: var(--muted); }
+    .modal-close { display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body class="subpage">
+  <div class="rails" aria-hidden="true"></div>
+  <div id="nav"></div>
+  <main class="page-wrap">
+    <section class="page-hero">
+      <span class="eyebrow">The Wall Remembers</span>
+      <h1 class="page-title">Words That Echo <span class="grad-pink ital">Always</span></h1>
+    </section>
+    <div class="page-body">
+      <div class="gb-grid" data-stagger>
+        <div class="gb-card gb-join reveal" style="--tilt:-1.5deg">
+          <div class="gb-note">
+            <div>
+              <p style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">"Join the wall..."</p>
+              <p style="font-weight:300;font-size:.82rem;opacity:.75;margin-top:.3rem">Sign in to leave your mark</p>
+              <button class="gb-write"><svg class="icon"><use href="#i-pen-line"/></svg> Write a message...</button>
+            </div>
+            <span class="doodle" style="top:12px;right:16px"><svg class="icon icon-sm"><use href="#i-sparkles"/></svg></span>
+          </div>
+          <div class="gb-foot" style="justify-content:center;gap:1rem"><span><svg class="icon"><use href="#i-git-branch"/></svg></span><span style="color:var(--muted-2)">·</span><span><svg class="icon"><use href="#i-globe"/></svg></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:1.6deg;--n1:#065f46;--n2:#022c22">
+          <div class="gb-note"><p>Great Work Buddy</p><span class="doodle" style="top:10px;left:14px"><svg class="icon icon-sm"><use href="#i-zap"/></svg></span><span class="doodle" style="bottom:10px;right:16px"><svg class="icon icon-sm"><use href="#i-sparkles"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#16a34a;--c2:#6ee7a0">KM</span><span><b>Kalyan M.</b><small>Jun 26, 2026</small></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:-2deg;--n1:#6d28d9;--n2:#312e81">
+          <div class="gb-note"><p>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; shipped it again</p><span class="doodle" style="top:14px;right:14px"><svg class="icon icon-sm"><use href="#i-sparkles"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#7c3aed;--c2:#c4b5fd">YG</span><span><b>Yash G.</b><small>Jun 24, 2026</small></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:1.2deg;--n1:#1d4ed8;--n2:#0c1e5b">
+          <div class="gb-note"><p>YO!! this just fires me up to make more effort in my products. Love your work!</p><span class="doodle" style="bottom:12px;left:14px"><svg class="icon icon-sm"><use href="#i-sparkles"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#3b4bdd;--c2:#8b9bff">AS</span><span><b>Atharva S.</b><small>Jun 21, 2026</small></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:-1.2deg;--n1:#9f1239;--n2:#450a0a">
+          <div class="gb-note"><p>This portfolio describes what actually perfection looks like</p><span class="doodle" style="top:12px;left:16px"><svg class="icon icon-sm"><use href="#i-heart"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#db2777;--c2:#f9a8d4">AR</span><span><b>Abhijeet R.</b><small>Jun 20, 2026</small></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:2deg;--n1:#1e3a8a;--n2:#111827">
+          <div class="gb-note"><p>Wohhhhhhh wohhhhhh just wohhhhhhhh!!!</p><span class="doodle" style="bottom:14px;right:14px"><svg class="icon icon-sm"><use href="#i-sparkles"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#0891b2;--c2:#67e8f9">CY</span><span><b>Cho Yamin</b><small>Jun 19, 2026</small></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:-1.8deg;--n1:#115e59;--n2:#042f2e">
+          <div class="gb-note"><p>Great Website — the little details got me</p><span class="doodle" style="top:10px;right:18px"><svg class="icon icon-sm"><use href="#i-zap"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#0d9488;--c2:#5eead4">PK</span><span><b>Priya K.</b><small>Jun 15, 2026</small></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:1.4deg;--n1:#a16207;--n2:#451a03">
+          <div class="gb-note"><p>yo! great Work! keep shipping</p><span class="doodle" style="bottom:10px;left:16px"><svg class="icon icon-sm"><use href="#i-sparkles"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#ca8a04;--c2:#fde047">RS</span><span><b>Rahul S.</b><small>Jun 12, 2026</small></span></div>
+        </div>
+        <div class="gb-card reveal" style="--tilt:-1deg;--n1:#86198f;--n2:#3b0764">
+          <div class="gb-note"><p>Great Website — borrowed three ideas already</p><span class="doodle" style="top:14px;left:12px"><svg class="icon icon-sm"><use href="#i-sparkles"/></svg></span></div>
+          <div class="gb-foot"><span class="av" style="--c1:#c026d3;--c2:#f0abfc">NF</span><span><b>Nadia F.</b><small>Jun 8, 2026</small></span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="modal" id="gbModal">
+    <div class="modal-bg" data-close></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close><svg class="icon"><use href="#i-x"/></svg></button>
+      <div class="modal-top">
+        <h3>Leave your mark</h3>
+        <p>Sign in to pin a note on the wall</p>
+      </div>
+      <div class="modal-body">
+        <button class="oauth-btn"><svg class="icon"><use href="#i-git-branch"/></svg> Continue with GitHub</button>
+        <button class="oauth-btn"><svg class="icon"><use href="#i-globe"/></svg> Continue with Google</button>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script src="motion.umd.js"></script>
+  <script src="sprite.js"></script>
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

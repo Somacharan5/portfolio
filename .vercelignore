@@ -1,0 +1,31 @@
+# --- large source media (never deploy) ---
+*.mov
+*.MOV
+rec1.mov
+rec2.mov
+Hero trial.MOV
+
+# --- dev / archive / os ---
+.archive/
+.team/
+.DS_Store
+node_modules/
+
+# --- cloned reference sites (copyright: NOT ours to publish) ---
+Home/
+about/
+Attribution/
+Blog/
+Blog1/
+Bucketlist/
+Contact/
+Guestbook/
+Links/
+Project/
+Uses/
+
+# --- third-party asset, unused ---
+assets-wings.svg
+
+# claude code local tooling
+.claude/

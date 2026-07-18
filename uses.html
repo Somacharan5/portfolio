@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uses — Soma Charan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('mo');</script>
+  <style>
+    /* gear-img tiles keep a fixed dark gradient bg in both themes — pin icon color to white so it stays visible in light mode */
+    .gear-img .icon { color: #fff; opacity: .92; width: 1.05em; height: 1.05em; }
+    .tool-row { transition: border-color .2s, transform .2s; }
+    .tool-row:hover { border-color: var(--muted-2); transform: translateY(-2px); }
+    .tool-row .tr-ic { transition: background .2s; }
+  </style>
+</head>
+<body class="subpage">
+  <div class="rails" aria-hidden="true"></div>
+  <div id="nav"></div>
+  <main class="page-wrap">
+    <section class="page-hero">
+      <span class="eyebrow">The Gear</span>
+      <h1 class="page-title">What Powers <span class="grad-pink ital">My Work</span></h1>
+    </section>
+    <div class="page-body">
+      <section class="split">
+        <div class="split-label reveal"><span class="num">01</span><h2>Setup.<small>The Hardware</small></h2></div>
+        <div class="reveal">
+          <div class="gear-hero">
+            <div class="gear-img" style="background:linear-gradient(135deg,#0f172a,#1e293b)"><svg class="icon"><use href="#i-monitor"/></svg></div>
+            <div class="gear-cap"><span><b>MacBook Air M4</b><small>16GB Unified Memory · 512GB SSD</small></span><span class="gear-pill">SKY BLUE</span></div>
+          </div>
+          <div class="gear-2col">
+            <div class="gear-hero"><div class="gear-img" style="background:linear-gradient(135deg,#312e81,#1e1b4b)"><svg class="icon"><use href="#i-monitor"/></svg></div>
+              <div class="gear-cap"><span><b>27" 4K Monitor</b><small>Placeholder — the second brain</small></span></div></div>
+            <div class="gear-hero"><div class="gear-img" style="background:linear-gradient(135deg,#4c1d95,#2e1065)"><svg class="icon"><use href="#i-video"/></svg></div>
+              <div class="gear-cap"><span><b>USB Mic</b><small>Placeholder — for calls &amp; loom walkthroughs</small></span></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="split">
+        <div class="split-label reveal"><span class="num">02</span><h2>Craft.<small>Product Stack</small></h2></div>
+        <div class="reveal tool-rows">
+          <div class="tool-row"><span class="tr-ic"><img class="tic" src="icons/figma.svg" alt=""></span><span><b>Figma</b><small>Where specs meet pixels</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><img class="tic" src="icons/linear.svg" alt=""></span><span><b>Linear</b><small>Roadmaps &amp; sprints</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><img class="tic" src="icons/notion.svg" alt=""></span><span><b>Notion</b><small>Docs, PRDs, everything</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><img class="tic" src="icons/mixpanel.svg" alt=""></span><span><b>Amplitude</b><small>Product analytics</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><img class="tic" src="icons/mixpanel.svg" alt=""></span><span><b>Mixpanel</b><small>Funnels &amp; cohorts</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><img class="tic" src="icons/miro.svg" alt=""></span><span><b>Miro</b><small>Workshops &amp; mapping</small></span></div>
+        </div>
+      </section>
+      <section class="split">
+        <div class="split-label reveal"><span class="num">03</span><h2>Flow.<small>Daily Apps</small></h2></div>
+        <div class="reveal tool-rows">
+          <div class="tool-row"><span class="tr-ic"><svg class="icon"><use href="#i-globe"/></svg></span><span><b>Arc</b><small>Browser that thinks in spaces</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><svg class="icon"><use href="#i-zap"/></svg></span><span><b>Raycast</b><small>Keyboard-first everything</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><svg class="icon"><use href="#i-message-circle"/></svg></span><span><b>Slack</b><small>Where the team lives</small></span></div>
+          <div class="tool-row"><span class="tr-ic"><svg class="icon"><use href="#i-mail"/></svg></span><span><b>Superhuman</b><small>Inbox zero, occasionally</small></span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script src="motion.umd.js"></script>
+  <script src="sprite.js"></script>
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
