@@ -232,6 +232,7 @@ img { max-width: 100%; display: block; }
 }
 .avatar-pill:hover { transform: scale(1.12) rotate(6deg); }
 .avatar-face { font-size: 1.05rem; }
+.avatar-img { width: 100%; height: 100%; object-fit: cover; object-position: 45% 14%; display: block; }
 .hero-cta {
   margin-top: 2.4rem; display: flex; gap: 1.4rem; align-items: center;
   flex-wrap: wrap; justify-content: center;

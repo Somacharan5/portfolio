@@ -29,3 +29,6 @@ assets-wings.svg
 
 # claude code local tooling
 .claude/
+
+# raw source images (only optimized avatar.jpg is used)
+Images/
