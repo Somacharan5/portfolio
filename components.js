@@ -58,10 +58,10 @@
               <button class="more-pill" data-book-call>${ic('calendar')} Book a Call</button>
               <a class="more-pill" href="contact.html#panelMsg">${ic('message-circle')} Send Message</a>
               <span class="more-icons">
-                <a href="mailto:soma.charan@email.com" aria-label="Email">${ic('mail')}</a>
-                <a href="#" aria-label="LinkedIn">${ic('briefcase')}</a>
-                <a href="#" aria-label="GitHub">${ic('git-branch')}</a>
-                <a href="#" aria-label="X">${ic('send')}</a>
+                <a href="mailto:iamsomacharan@gmail.com" aria-label="Email">${ic('mail')}</a>
+                <a href="https://www.linkedin.com/in/somacharan/" target="_blank" rel="noopener" aria-label="LinkedIn">${ic('briefcase')}</a>
+                <a href="https://github.com/Somacharan5" target="_blank" rel="noopener" aria-label="GitHub">${ic('git-branch')}</a>
+                <a href="https://x.com/iamsomacharan" target="_blank" rel="noopener" aria-label="X">${ic('send')}</a>
               </span>
             </div>
           </div>
@@ -79,8 +79,8 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="ab-badge small">Soma</span>
-        <p>I'm Soma — a product manager, builder &amp; problem solver. Thanks for checking out my site!</p>
-        <span class="footer-avail"><span class="badge-dot"></span> Available for work</span>
+        <p>I'm Soma — a product manager who turns ambiguous problems into products people love. Strategy that ships, craft that sticks.</p>
+        <a class="footer-avail" href="contact.html" data-book-call><span class="badge-dot"></span> Available for work — let's talk</a>
       </div>
       <div class="footer-cols">
         <div class="footer-col"><h4>General</h4>
@@ -138,9 +138,9 @@
         </div>
         <div class="pal-group">Connect</div>
         <div class="pal-grid">
-          <a class="pal-item" href="#"><span class="pi-ic">${ic('git-branch')}</span>GitHub</a>
-          <a class="pal-item" href="#"><span class="pi-ic">${ic('briefcase')}</span>LinkedIn</a>
-          <a class="pal-item" href="#"><span class="pi-ic">${ic('send')}</span>X (Twitter)</a>
+          <a class="pal-item" href="https://github.com/Somacharan5" target="_blank" rel="noopener"><span class="pi-ic">${ic('git-branch')}</span>GitHub</a>
+          <a class="pal-item" href="https://www.linkedin.com/in/somacharan/" target="_blank" rel="noopener"><span class="pi-ic">${ic('briefcase')}</span>LinkedIn</a>
+          <a class="pal-item" href="https://x.com/iamsomacharan" target="_blank" rel="noopener"><span class="pi-ic">${ic('send')}</span>X (Twitter)</a>
         </div>
         <div class="pal-group">Legal</div>
         <div class="pal-grid">
@@ -171,13 +171,13 @@
           </button>
           <button class="reach-sq" id="reachEmail">
             <span class="rs-mail" aria-hidden="true">${ic('mail')}</span>
-            <b>Email me</b><small class="rs-mono">soma.charan@email.com</small>
+            <b>Email me</b><small class="rs-mono">iamsomacharan@gmail.com</small>
           </button>
         </div>
         <div class="reach-pills">
-          <a class="reach-pill" href="#">LinkedIn</a>
-          <a class="reach-pill" href="#">X / Twitter</a>
-          <a class="reach-pill" href="#">GitHub</a>
+          <a class="reach-pill" href="https://www.linkedin.com/in/somacharan/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="reach-pill" href="https://x.com/iamsomacharan" target="_blank" rel="noopener">X / Twitter</a>
+          <a class="reach-pill" href="https://github.com/Somacharan5" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
@@ -321,7 +321,7 @@
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); demoToast(); }
   });
   document.getElementById('reachEmail').addEventListener('click', () => {
-    const email = 'soma.charan@email.com';
+    const email = 'iamsomacharan@gmail.com';
     const done = () => toast('Copied! ' + email);
     if (navigator.clipboard) navigator.clipboard.writeText(email).then(done, done);
     else done();
