@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founder AI — Case Study — Soma Charan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('mo');</script>
+</head>
+<body class="subpage">
+  <div class="rails" aria-hidden="true"></div>
+  <div id="nav"></div>
+  <main class="page-wrap">
+    <nav class="crumbs"><a href="index.html">Home</a> › <a href="projects.html">Projects</a> › <span style="color:var(--fg)">Founder AI</span></nav>
+    <header class="pd-head reveal">
+      <h1>AI-Powered Founder Engagement Platform</h1>
+      <p class="lede">Public founders face a constant trade-off between maintaining authentic relationships with their audience and protecting time for company building. I designed an AI-assisted engagement platform that drafts context-aware replies while keeping every public interaction under the founder's direct control through a Human-in-the-Loop approval workflow.</p>
+      <div class="pd-actions"><button class="copy-url"><svg class="icon"><use href="#i-link-2"/></svg> Copy URL</button></div>
+    </header>
+    <div class="split" style="border-top:none">
+      <div class="reveal">
+        <dl class="pd-meta">
+          <div><dt>Type</dt><dd>Executive AI Workflow</dd></div>
+          <div><dt>Role</dt><dd>Founder's Office • Product &amp; AI Automation</dd></div>
+          <div><dt>Built</dt><dd>Q2 2026</dd></div>
+          <div><dt>Updated</dt><dd>Q2 2026</dd></div>
+          <div><dt>Status</dt><dd>Private (Internal)</dd></div>
+          <div><dt>Team</dt><dd>Founder's Office</dd></div>
+        </dl>
+      </div>
+      <div class="reveal">
+        <span class="tk-label">Toolkit</span>
+        <ul class="stack" style="margin-bottom:1.4rem"><li><i><svg class="icon"><use href="#i-brain"/></svg></i>OpenAI</li><li><i><svg class="icon"><use href="#i-message-circle"/></svg></i>Telegram</li><li><i><svg class="icon"><use href="#i-zap"/></svg></i>n8n</li><li><i><svg class="icon"><use href="#i-sparkles"/></svg></i>Prompt Engineering</li><li><i><svg class="icon"><use href="#i-database"/></svg></i>Knowledge Base</li><li><i><svg class="icon"><use href="#i-sparkles"/></svg></i>Human-in-the-Loop</li><li><i><svg class="icon"><use href="#i-zap"/></svg></i>Workflow Automation</li></ul>
+      </div>
+    </div>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">01</span><h2>Why I Built This</h2></div>
+      <div class="prose reveal">
+        <p>For founders, social media is no longer optional—it has become an extension of customer support, recruiting, investor relations, and brand building. As engagement grows, however, every reply competes with strategic work for attention.</p>
+        <p>The challenge wasn't generating responses. Modern language models can already do that.</p>
+        <p><b>The real challenge was preserving the founder's unique voice while ensuring that every public interaction remained trustworthy and intentional.</b></p>
+        <p>A fully autonomous system risked damaging credibility, while a completely manual process became increasingly unsustainable.</p>
+        <p>The objective was to augment—not replace—the founder's communication process.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">02</span><h2>The Approach</h2></div>
+      <div class="prose reveal">
+        <p>I designed the product around a Human-in-the-Loop architecture rather than full automation.</p>
+        <p>Incoming mentions, replies, and conversations were first filtered to remove low-value interactions and identify messages requiring attention. Relevant conversations were enriched with historical context before being passed to a language model trained to mirror the founder's writing style and communication patterns.</p>
+        <p>Instead of publishing automatically, the generated response was delivered through Telegram as a lightweight approval interface. The founder could approve, edit, or reject every draft with a single action, keeping decision-making fast without sacrificing control.</p>
+        <p>The system emphasized reducing cognitive load rather than maximizing automation.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">03</span><h2>Key Decisions</h2></div>
+      <div class="prose reveal">
+        <p>The most important product decision was intentionally rejecting end-to-end autonomy.</p>
+        <p>Although autonomous publishing could have saved a few additional minutes, the reputational cost of even one inaccurate public response outweighed the operational benefit.</p>
+        <p>Human approval therefore became a core product feature rather than a temporary limitation.</p>
+        <p>Another key decision was prioritizing contextual retrieval over increasingly complex prompts. By supplying historical conversations, company context, and previous communication patterns before generation, the platform consistently produced responses that felt authentic without requiring excessive prompt engineering.</p>
+        <p>This architecture improved reliability while keeping the system maintainable as communication styles evolved.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">04</span><h2>What I Learned</h2></div>
+      <div class="prose reveal">
+        <p>This project reinforced that AI adoption is fundamentally a trust problem rather than a capability problem.</p>
+        <p>Users rarely resist automation because models are weak—they resist automation when they lose confidence in the outcome.</p>
+        <p>Designing systems where humans retain meaningful control dramatically increases adoption while still delivering significant productivity gains.</p>
+      </div>
+    </section>
+    <div class="next-projects">
+      <a class="muse reveal" href="project-prodsense.html"><span class="num">← Previous</span><b>ProdSense AI</b><small>An AI-native Product Operating System that transforms scattered signals into roadmap decisions.</small></a>
+      <a class="muse reveal" href="project-intel.html" style="text-align:right"><span class="num">Next →</span><b>Competitive Intelligence</b><small>Turning fragmented market signals into executive-ready strategic intelligence.</small></a>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script src="motion.umd.js"></script>
+  <script src="sprite.js"></script>
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

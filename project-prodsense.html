@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProdSense AI — Case Study — Soma Charan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('mo');</script>
+</head>
+<body class="subpage">
+  <div class="rails" aria-hidden="true"></div>
+  <div id="nav"></div>
+  <main class="page-wrap">
+    <nav class="crumbs"><a href="index.html">Home</a> › <a href="projects.html">Projects</a> › <span style="color:var(--fg)">ProdSense AI</span></nav>
+    <header class="pd-head reveal">
+      <h1>ProdSense AI</h1>
+      <p class="lede">Product managers spend more time gathering information than making decisions. Feedback lives across support tickets, Slack, analytics dashboards, research documents, competitor updates, and meeting transcripts. ProdSense AI brings every signal into one intelligent workspace, continuously transforming fragmented information into prioritized product opportunities, evidence-backed PRDs, and strategic recommendations.</p>
+      <div class="pd-actions"><button class="copy-url"><svg class="icon"><use href="#i-link-2"/></svg> Copy URL</button></div>
+    </header>
+    <div class="split" style="border-top:none">
+      <div class="reveal">
+        <dl class="pd-meta">
+          <div><dt>Type</dt><dd>AI Product Intelligence Platform</dd></div>
+          <div><dt>Role</dt><dd>Founder • Product Manager</dd></div>
+          <div><dt>Built</dt><dd>Q2 2026</dd></div>
+          <div><dt>Updated</dt><dd>Q3 2026</dd></div>
+          <div><dt>Status</dt><dd>Private Concept</dd></div>
+          <div><dt>Team</dt><dd>Solo Builder</dd></div>
+        </dl>
+      </div>
+      <div class="reveal">
+        <span class="tk-label">Toolkit</span>
+        <ul class="stack" style="margin-bottom:1.4rem"><li><i><svg class="icon"><use href="#i-brain"/></svg></i>OpenAI</li><li><i><svg class="icon"><use href="#i-brain"/></svg></i>Anthropic Claude</li><li><i><svg class="icon"><use href="#i-database"/></svg></i>PostgreSQL</li><li><i><svg class="icon"><use href="#i-database"/></svg></i>pgvector</li><li><i><svg class="icon"><use href="#i-database"/></svg></i>RAG</li><li><i><svg class="icon"><use href="#i-zap"/></svg></i>n8n</li><li><i><svg class="icon"><use href="#i-file-text"/></svg></i>Python</li><li><i><svg class="icon"><use href="#i-brain"/></svg></i>Google Gemini</li></ul>
+      </div>
+    </div>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">01</span><h2>Why I Built This</h2></div>
+      <div class="prose reveal">
+        <p>Every product team claims to be "data-driven," yet the reality is the opposite. Valuable insights are scattered across customer interviews, Slack conversations, feature requests, support tickets, analytics dashboards, roadmap discussions, and competitor announcements. Teams spend days manually gathering information before they can even begin prioritizing work.</p>
+        <p>The larger the organization becomes, the worse this fragmentation gets.</p>
+        <p><b>The real bottleneck wasn't writing PRDs—it was discovering the right problems worth solving.</b></p>
+        <p>I wanted to build an operating system that continuously listened to every product signal, organized it automatically, and surfaced opportunities before they became obvious.</p>
+        <p>Instead of replacing Product Managers, the goal was to remove repetitive synthesis work so PMs could focus on strategy, customer understanding, and decision-making.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">02</span><h2>The Approach</h2></div>
+      <div class="prose reveal">
+        <p>I designed ProdSense AI as a collection of specialized AI agents instead of a single large assistant.</p>
+        <p>Each agent owned one responsibility.</p>
+        <ul><li>Feedback Intelligence Agent continuously analyzed customer conversations.</li><li>Competitor Intelligence Agent monitored market movements.</li><li>Analytics Agent identified unusual behavioral changes.</li><li>Research Agent summarized interviews and documents.</li></ul>
+        <p>These outputs flowed into a centralized knowledge layer backed by semantic embeddings using pgvector, allowing related information to connect regardless of where it originated.</p>
+        <p>Rather than generating generic summaries, the platform accumulated evidence over time.</p>
+        <p>When enough supporting signals emerged around a customer problem, the system automatically elevated it into a product opportunity, complete with supporting evidence, affected users, business impact, and recommended next steps.</p>
+        <p>This transformed discovery from an occasional workshop into a continuous operating process.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">03</span><h2>Key Decisions</h2></div>
+      <div class="prose reveal">
+        <p>One of the biggest design decisions was rejecting a traditional chatbot interface.</p>
+        <p>Most AI products force users to ask questions.</p>
+        <p>I wanted the opposite.</p>
+        <p><b>The product should proactively discover opportunities instead of waiting for someone to ask.</b></p>
+        <p>Another deliberate decision was building evidence-first PRDs.</p>
+        <p>Instead of allowing AI to invent convincing product requirements, every recommendation had to reference actual customer feedback, analytics, competitor insights, or research documents.</p>
+        <p>This dramatically increased trust while reducing hallucinations.</p>
+        <p>I also separated long-term memory from generation.</p>
+        <p>Embeddings stored organizational knowledge permanently while language models only synthesized information when required.</p>
+        <p>This architecture reduced costs, improved consistency, and allowed the platform to scale as more product data accumulated.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">04</span><h2>What I Learned</h2></div>
+      <div class="prose reveal">
+        <p>Building ProdSense AI reinforced a lesson I've repeatedly seen across product organizations:</p>
+        <p><b>Information isn't the scarce resource—clarity is.</b></p>
+        <p>Companies already possess enormous amounts of customer knowledge.</p>
+        <p>The real challenge is connecting fragmented signals quickly enough to make confident product decisions.</p>
+        <p>Rather than building another AI assistant, I learned that the highest leverage comes from designing systems that continuously organize organizational knowledge and present it exactly when strategic decisions need to be made.</p>
+      </div>
+    </section>
+    <div class="next-projects">
+      <a class="muse reveal" href="project-priority.html"><span class="num">← Previous</span><b>Lead Intelligence Engine</b><small>Ranking opportunities through behavioral and contextual intelligence.</small></a>
+      <a class="muse reveal" href="project-founderai.html" style="text-align:right"><span class="num">Next →</span><b>Founder AI</b><small>Scaling authentic founder engagement without sacrificing voice or trust.</small></a>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script src="motion.umd.js"></script>
+  <script src="sprite.js"></script>
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

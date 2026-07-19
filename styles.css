@@ -552,6 +552,9 @@ body.subpage {
 .prose p { color: var(--fg-soft); font-size: 1.02rem; line-height: 1.75; margin-bottom: 1.2rem; max-width: 62ch; }
 .prose b { color: var(--fg); }
 .prose h3 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 .8rem; }
+.prose ul { list-style: none; margin: 0 0 1.2rem; max-width: 62ch; display: flex; flex-direction: column; gap: .55rem; }
+.prose li { position: relative; padding-left: 1.5rem; color: var(--fg-soft); font-size: 1.02rem; line-height: 1.7; }
+.prose li::before { content: "▸"; position: absolute; left: 0; color: #ff2d78; }
 
 /* ---------------- Nav additions: greeting ---------------- */
 .nav-greet { display: none; align-items: center; gap: .5rem; font-size: .92rem; color: var(--fg-soft); padding: .55rem 1.15rem; }

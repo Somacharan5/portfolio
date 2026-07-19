@@ -100,32 +100,18 @@ Built from the real CV — 7 roles now live: **Hike** (Founders' Office, current
 
 ---
 
-## 💼 Projects (`projects.html`) — 5 case-study cards
+## 💼 Projects — ✅ BUILT (18 real case studies, generated)
 
-Per card: **number**, **type/category**, **name**, **date** (e.g. "Q2 2026"), **one-liner**, **description** (~150–200 chars), **3 feature bullets**, **stack tags** (4).
+The whole Work section is now **generated from `All projects.md`** by `build-projects.py`:
+- `projects.html` — the full deck, **18 cards** (ProdSense AI, Founder AI, Competitive Intelligence, PMO Workbench, AutomateAI, Drivolo, Call Intelligence, LeadForge AI, MailPilot AI, Calendar Concierge, Commerce AI, Project Garuda, Xads, Product Repository, JiraOps, Executive Command Center, AI CRM, Lead Intelligence Engine).
+- `project-<slug>.html` — one full detail page per project (crumbs, lede, meta, toolkit, 4 narrative sections, prev/next).
 
-| # | Type | Name | Date | Status |
-|---|------|------|------|--------|
-| 01 | B2B SaaS | Atlas | Q2 2026 | placeholder |
-| 02 | Consumer Fintech | Pulse | Q4 2025 | placeholder |
-| 03 | AI Workflow | Nova | Q1 2025 | placeholder |
-| 04 | Platform | Ledger | Q4 2024 | placeholder |
-| 05 | Consumer | Bloom | Q1 2024 | placeholder |
+**To edit a project:** change `All projects.md`, then run `python3 build-projects.py` — do **not** hand-edit the generated `project-*.html` / `projects.html` (a re-run overwrites them).
 
-> The first 3 mirror the Home page — keep them consistent.
-
----
-
-## 📄 Project detail (`project.html`) — ⚠️ template note
-
-Right now **one** detail page exists (Atlas) and **all 5 cards link to it**. To give each project its own page you'll need to **duplicate this file** (e.g. `project-pulse.html`) and update the links. Per detail page:
-
-- [ ] **Title** + **lede** (~180–220 chars)
-- [ ] **Meta block**: Type · Role · Built · Updated · 🔗 Visit URL · Team size
-- [ ] **Toolkit tags** (~8)
-- [ ] **4 narrative sections** — all currently start with "Placeholder…":
-  - `01 Why I Built This` · `02 The Approach` · `03 Key Decisions` · `04 What I Learned` (each ~1–2 short paragraphs)
-- [ ] **Prev / Next** project links (name + one-liner)
+**Still to do on Work:**
+- [ ] **Images** — drop `project-images/<slug>/cover.jpg` (+ optional shots), then extend the generator to emit `<img>` instead of the placeholder gradient/mock.
+- [ ] **Feature on Home** — pick ~3 projects for the "Curated Work" section on `index.html` (still shows the old Atlas/Pulse/Nova placeholders).
+- [ ] Old `project.html` (single Atlas template) is now orphaned — safe to delete.
 
 ---
 

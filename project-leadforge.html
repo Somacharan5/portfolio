@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeadForge AI — Case Study — Soma Charan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('mo');</script>
+</head>
+<body class="subpage">
+  <div class="rails" aria-hidden="true"></div>
+  <div id="nav"></div>
+  <main class="page-wrap">
+    <nav class="crumbs"><a href="index.html">Home</a> › <a href="projects.html">Projects</a> › <span style="color:var(--fg)">LeadForge AI</span></nav>
+    <header class="pd-head reveal">
+      <h1>LeadForge AI</h1>
+      <p class="lede">Traditional prospecting forces sales teams to spend hours identifying, researching, validating, and organizing potential customers before meaningful conversations even begin. LeadForge AI automates the entire discovery process, allowing teams to focus on selling rather than searching.</p>
+      <div class="pd-actions"><button class="copy-url"><svg class="icon"><use href="#i-link-2"/></svg> Copy URL</button></div>
+    </header>
+    <div class="split" style="border-top:none">
+      <div class="reveal">
+        <dl class="pd-meta">
+          <div><dt>Type</dt><dd>AI Sales Intelligence</dd></div>
+          <div><dt>Role</dt><dd>Founder • Product Manager</dd></div>
+          <div><dt>Built</dt><dd>Q2 2026</dd></div>
+          <div><dt>Updated</dt><dd>Q2 2026</dd></div>
+          <div><dt>Status</dt><dd>Private</dd></div>
+          <div><dt>Team</dt><dd>Solo Builder</dd></div>
+        </dl>
+      </div>
+      <div class="reveal">
+        <span class="tk-label">Toolkit</span>
+        <ul class="stack" style="margin-bottom:1.4rem"><li><i><svg class="icon"><use href="#i-brain"/></svg></i>Gemini</li><li><i><svg class="icon"><use href="#i-globe"/></svg></i>Apify</li><li><i><svg class="icon"><use href="#i-globe"/></svg></i>PhantomBuster</li><li><i><svg class="icon"><use href="#i-file-text"/></svg></i>Google Sheets</li><li><i><svg class="icon"><use href="#i-zap"/></svg></i>n8n</li><li><i><svg class="icon"><use href="#i-brain"/></svg></i>OpenAI</li><li><i><svg class="icon"><use href="#i-sparkles"/></svg></i>CRM Automation</li></ul>
+      </div>
+    </div>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">01</span><h2>Why I Built This</h2></div>
+      <div class="prose reveal">
+        <p>Prospecting has always been one of the least scalable parts of outbound sales. Every campaign starts with manually defining target companies, identifying decision makers, validating contact information, and organizing data before outreach even begins.</p>
+        <p><b>The bottleneck wasn't outreach—it was building high-quality prospect lists consistently.</b></p>
+        <p>I wanted to remove repetitive research entirely by designing a system capable of understanding a business first, then autonomously identifying companies and people most likely to benefit from its solution.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">02</span><h2>The Approach</h2></div>
+      <div class="prose reveal">
+        <p>Instead of asking users to manually define search filters, the system first analyzed the business itself.</p>
+        <p>A Gemini-powered discovery layer extracted customer personas, industry segments, pain points, buying triggers, and ideal customer characteristics. These structured insights became search parameters for automated prospect discovery using multiple scraping and enrichment services.</p>
+        <p>Qualified leads passed through validation before being normalized into a CRM-ready structure, ensuring downstream outreach systems always received clean, standardized datasets.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">03</span><h2>Key Decisions</h2></div>
+      <div class="prose reveal">
+        <p>Rather than maximizing the number of leads collected, I optimized for relevance.</p>
+        <p>Poor-quality automation simply generates larger databases filled with unusable contacts. By emphasizing qualification before enrichment, the platform reduced downstream cleanup while improving campaign quality.</p>
+        <p>The architecture also separated customer understanding from data collection, making it easy to support new industries without redesigning the scraping infrastructure.</p>
+      </div>
+    </section>
+    <section class="split">
+      <div class="split-label reveal"><span class="num">04</span><h2>What I Learned</h2></div>
+      <div class="prose reveal">
+        <p>Automation creates value only when it improves decision quality.</p>
+        <p>Generating thousands of leads is meaningless if sales teams lose confidence in the data. Building trust through intelligent qualification proved far more valuable than maximizing volume.</p>
+      </div>
+    </section>
+    <div class="next-projects">
+      <a class="muse reveal" href="project-callintel.html"><span class="num">← Previous</span><b>Call Intelligence</b><small>Transforming thousands of customer conversations into actionable business intelligence.</small></a>
+      <a class="muse reveal" href="project-mailpilot.html" style="text-align:right"><span class="num">Next →</span><b>MailPilot AI</b><small>Managing business email through intelligent prioritization, drafting, and workflow automation.</small></a>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script src="motion.umd.js"></script>
+  <script src="sprite.js"></script>
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
