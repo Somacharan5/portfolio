@@ -102,16 +102,15 @@ Built from the real CV — 7 roles now live: **Hike** (Founders' Office, current
 
 ## 💼 Projects — ✅ BUILT (18 real case studies, generated)
 
-The whole Work section is now **generated from `All projects.md`** by `build-projects.py`:
+The whole Work section is now **generated from `content/All projects.md`** by `tools/build-projects.py`:
 - `projects.html` — the full deck, **18 cards** (ProdSense AI, Founder AI, Competitive Intelligence, PMO Workbench, AutomateAI, Drivolo, Call Intelligence, LeadForge AI, MailPilot AI, Calendar Concierge, Commerce AI, Project Garuda, Xads, Product Repository, JiraOps, Executive Command Center, AI CRM, Lead Intelligence Engine).
 - `project-<slug>.html` — one full detail page per project (crumbs, lede, meta, toolkit, 4 narrative sections, prev/next).
 
-**To edit a project:** change `All projects.md`, then run `python3 build-projects.py` — do **not** hand-edit the generated `project-*.html` / `projects.html` (a re-run overwrites them).
+**To edit a project:** change `content/All projects.md`, then run `python3 tools/build-projects.py` — do **not** hand-edit the generated `project-*.html` / `projects.html` (a re-run overwrites them).
 
 **Still to do on Work:**
 - [ ] **Images** — drop `project-images/<slug>/cover.jpg` (+ optional shots), then extend the generator to emit `<img>` instead of the placeholder gradient/mock.
 - [ ] **Feature on Home** — pick ~3 projects for the "Curated Work" section on `index.html` (still shows the old Atlas/Pulse/Nova placeholders).
-- [ ] Old `project.html` (single Atlas template) is now orphaned — safe to delete.
 
 ---
 

@@ -11,8 +11,9 @@ in a later pass — for now each card uses the existing gradient + mock placehol
 """
 import os, re, html
 
-BASE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(BASE, "All projects.md")
+# build-projects.py lives in tools/ ; BASE is the repo root (one level up)
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(BASE, "content", "All projects.md")
 
 KEYS = {
     'slug','name','type','date','one_liner','card_description','feature_bullets',
@@ -156,14 +157,14 @@ HEAD = '''<!doctype html>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script>document.documentElement.classList.add('mo');</script>
 </head>'''
 SCRIPTS = '''  <div id="footer"></div>
-  <script src="motion.umd.js"></script>
-  <script src="sprite.js"></script>
-  <script src="components.js"></script>
-  <script src="script.js"></script>
+  <script src="assets/js/motion.umd.js"></script>
+  <script src="assets/js/sprite.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>'''
 

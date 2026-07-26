@@ -161,7 +161,7 @@ img { max-width: 100%; display: block; }
 /* reduced motion: show the still poster frame instead of the moving video */
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none !important; }
-  :root[data-theme="dark"] .hero { background: #060608 url(hero-poster.jpg) center / cover no-repeat; }
+  :root[data-theme="dark"] .hero { background: #060608 url(../media/hero-poster.jpg) center / cover no-repeat; }
 }
 /* aurora glow rising from horizon */
 .hero-aurora {
