@@ -196,6 +196,19 @@ GH_ICON = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
     '0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.81c0 '
     '.27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>')
 
+def live_btn(url):
+    """A 'Live' button whose label + icon adapt to the URL (web / Play Store / App Store)."""
+    u = url.lower()
+    if "play.google.com" in u:
+        label, icon = "Play Store", "i-smartphone"
+    elif "apps.apple.com" in u:
+        label, icon = "App Store", "i-smartphone"
+    else:
+        label, icon = "Live Site", "i-globe"
+    return (f'<a class="pd-btn" href="{esc(url)}" target="_blank" rel="noopener">'
+            f'<svg class="icon"><use href="#{icon}"/></svg> {label} '
+            f'<svg class="icon icon-sm"><use href="#i-arrow-up-right"/></svg></a>')
+
 COVER_EXTS = ("jpg", "jpeg", "png", "webp")
 def cover_src(slug):
     """Return the web path to a project's cover image if one exists, else None."""
@@ -289,11 +302,7 @@ def detail_html(p, prev, nxt):
       </div>
     </section>
 '''
-    actions = ""
-    if p.get("live"):
-        actions += (f'<a class="pd-btn" href="{esc(p["live"])}" target="_blank" rel="noopener">'
-                    f'<svg class="icon"><use href="#i-globe"/></svg> Live Site '
-                    f'<svg class="icon icon-sm"><use href="#i-arrow-up-right"/></svg></a>')
+    actions = "".join(live_btn(u) for u in list_items(p.get("live", "")))
     if p.get("repo"):
         actions += (f'<a class="pd-btn" href="{esc(p["repo"])}" target="_blank" rel="noopener">'
                     f'{GH_ICON} GitHub</a>')

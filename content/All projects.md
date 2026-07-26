@@ -510,11 +510,12 @@ feature_bullets:
 - Reduced ambiguity during project discovery and scoping.
 
 stack_tags:
-AI
-MARKETPLACE
-AUTOMATION
-PLATFORM
-B2B
+REACT
+TYPESCRIPT
+VITE
+TAILWIND CSS
+SHADCN UI
+REACT ROUTER
 
 ------------------------------------------------------------
 
@@ -534,27 +535,35 @@ meta_built:
 Q2 2026
 
 meta_updated:
-Concept
+Q3 2026
 
 meta_visit:
-Private Concept
+Live demo
 
 meta_team:
 Solo Builder
 
+repo:
+https://github.com/Somacharan5/automate-link
+
+live:
+https://automate-marketplace.vercel.app
+
 toolkit:
 
-OpenAI
+React
 
-Embeddings
+TypeScript
 
-Marketplace Design
+Vite
 
-Workflow Automation
+Tailwind CSS
 
-Product Strategy
+shadcn/ui
 
-Matching Algorithms
+React Router
+
+Lucide
 
 ------------------------------------------------------------
 
@@ -642,10 +651,14 @@ meta_updated:
 Q2 2025
 
 meta_visit:
-Private
+Live · iOS & Android
 
 meta_team:
 Flutter + Firebase Team
+
+live:
+https://play.google.com/store/apps/details?id=com.shubhamarora9878.drivoloapp&hl=en_IN
+https://apps.apple.com/in/app/drivolo/id6759315211
 
 toolkit:
 
@@ -2056,13 +2069,16 @@ meta_updated:
 2023
 
 meta_visit:
-Case study
+Live demo
 
 meta_team:
 Solo Founder
 
 repo:
 https://github.com/Somacharan5/success-thinks
+
+live:
+https://successthinks.vercel.app
 
 toolkit:
 
