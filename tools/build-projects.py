@@ -231,10 +231,11 @@ def covers(slug):
 def stack_html(imgs, name):
     """Fan-out stack: front cover on top, up to two more that spread out on hover."""
     backs = imgs[1:3]
+    n = len(backs) + 1  # 2 or 3 images
     parts = [f'<img class="ps-img ps-back{k+1}" src="{b}" alt="" loading="lazy" />'
              for k, b in enumerate(backs)]
     parts.append(f'<img class="ps-img ps-front" src="{imgs[0]}" alt="{esc(name)} interface" loading="lazy" />')
-    return f'<div class="pv-stack">{"".join(parts)}</div>'
+    return f'<div class="pv-stack n{n}">{"".join(parts)}</div>'
 
 HEAD = '''<!doctype html>
 <html lang="en" data-theme="dark">
