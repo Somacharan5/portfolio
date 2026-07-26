@@ -218,6 +218,24 @@ def cover_src(slug):
             return rel
     return None
 
+def covers(slug):
+    """All images for a project in display order (cover, 01, 02, 03) that exist on disk."""
+    out = []
+    for n in ("cover", "01", "02", "03"):
+        for ext in COVER_EXTS:
+            rel = f"project-images/{slug}/{n}.{ext}"
+            if os.path.exists(os.path.join(BASE, rel)):
+                out.append(rel); break
+    return out
+
+def stack_html(imgs, name):
+    """Fan-out stack: front cover on top, up to two more that spread out on hover."""
+    backs = imgs[1:3]
+    parts = [f'<img class="ps-img ps-back{k+1}" src="{b}" alt="" loading="lazy" />'
+             for k, b in enumerate(backs)]
+    parts.append(f'<img class="ps-img ps-front" src="{imgs[0]}" alt="{esc(name)} interface" loading="lazy" />')
+    return f'<div class="pv-stack">{"".join(parts)}</div>'
+
 HEAD = '''<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -241,9 +259,13 @@ SCRIPTS = '''  <div id="footer"></div>
 # ---------------- deck (projects.html) ----------------
 def deck_card(i, p):
     g1, g2 = GRADS[i % len(GRADS)]
-    cover = cover_src(p["slug"])
-    visual = (f'<img class="pv-cover" src="{cover}" alt="{esc(p["name"])} interface" loading="lazy" />'
-              if cover else MOCKS[i % len(MOCKS)])
+    imgs = covers(p["slug"])
+    if len(imgs) >= 2:
+        visual = stack_html(imgs, p["name"])
+    elif imgs:
+        visual = f'<img class="pv-cover" src="{imgs[0]}" alt="{esc(p["name"])} interface" loading="lazy" />'
+    else:
+        visual = MOCKS[i % len(MOCKS)]
     feats = list_items(p.get("feature_bullets", ""))[:3]
     tags = list_items(p.get("stack_tags", ""))
     feat_html = "".join(f"<li>{bold(f)}</li>" for f in feats)
