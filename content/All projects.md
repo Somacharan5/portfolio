@@ -2126,3 +2126,129 @@ section_04_learned:
 
 Decision-support systems succeed when users trust both the recommendation and the reasoning behind it.
 
+=== PROJECT 20 ===
+
+--- CARD FIELDS ---
+
+slug:
+successthinks
+
+name:
+SuccessThinks
+
+type:
+EdTech Startup
+
+date:
+2021 – 2023
+
+one_liner:
+My first venture — a digital-marketing training platform for India's students.
+
+card_description:
+SuccessThinks was my first startup — an EdTech brand I built from the ground up, owning strategy, product, marketing, and operations end to end. I scaled it to 2,000+ learners and ₹39L+ revenue.
+
+feature_bullets:
+- Built the brand end to end — strategy, product, marketing, and operations.
+- Scaled digital learning to 2,000+ learners and ₹39L+ revenue.
+- Designed multi-step lead funnels — 15,000+ qualified leads at 12% conversion.
+- Automated onboarding & reporting to run lean with limited resources.
+
+stack_tags:
+EDTECH
+PRODUCT
+GROWTH
+MARKETING
+AUTOMATION
+FUNNELS
+
+------------------------------------------------------------
+
+title:
+SuccessThinks
+
+lede:
+
+SuccessThinks was my first entrepreneurial venture — a digital-marketing training platform built to make practical skill development and career growth accessible to India's students and young professionals. I built the brand from the ground up and owned every function end to end.
+
+------------------------------------------------------------
+
+meta_role:
+Founder • Product & Growth
+
+meta_built:
+2021
+
+meta_updated:
+2023
+
+meta_visit:
+Case study
+
+meta_team:
+Solo Founder
+
+repo:
+https://github.com/Somacharan5/success-thinks
+
+toolkit:
+
+Product Strategy
+
+Growth Experimentation
+
+Marketing Automation
+
+Funnel Design
+
+User Research
+
+Analytics
+
+CRM
+
+------------------------------------------------------------
+
+section_01_why:
+
+I started SuccessThinks with a simple conviction: practical skill development and real career growth were out of reach for most students and young professionals in India. Traditional education rarely prepared them for the skills the market actually rewarded.
+
+**The gap wasn't ambition — it was access.**
+
+I wanted to build a platform that made hands-on, career-focused learning affordable and reachable — and to prove I could take an idea from zero to a real business.
+
+------------------------------------------------------------
+
+section_02_approach:
+
+I built the brand from the ground up, owning strategy, product, marketing, operations, and community growth in parallel.
+
+I designed and launched digital learning initiatives, built scalable marketing funnels, and developed automation-driven workflows to streamline operations. Working directly with learners, creators, and partners gave me hands-on experience across user research, product iteration, growth experimentation, and data-driven decision-making.
+
+Every function fed the next: research shaped the product, funnels drove acquisition, and automation kept operations lean enough for one founder to run.
+
+------------------------------------------------------------
+
+section_03_decisions:
+
+With limited resources, speed and leverage mattered more than polish.
+
+I prioritized **validating ideas quickly** over building perfectly, and leaned on automation to scale operations that would otherwise need a team — onboarding, reporting, and lead nurturing all ran on automated workflows.
+
+Rather than chasing vanity reach, I optimized the funnel for qualified intent — which is how a multi-step lead engine converted 15,000+ leads at a 12% rate.
+
+------------------------------------------------------------
+
+section_04_learned:
+
+More than a startup, SuccessThinks became the foundation of my product mindset.
+
+It taught me how to identify real user problems, build solutions with limited resources, validate ideas fast, and scale systems through technology. That experience laid the groundwork for everything since — my later work in AI, automation, product management, and building data-driven platforms.
+
+------------------------------------------------------------
+
+--- IMAGES ---
+
+cover:
+project-images/successthinks/cover.jpg
+

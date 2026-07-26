@@ -104,6 +104,8 @@ EXACT = {
     'tanstack query':'i-database','react hook form':'i-pen-line','zod':'i-shield','recharts':'i-bar-chart-3',
     'lucide':'i-sparkles','papaparse':'i-file-text','bun':'i-package','node.js':'i-package',
     'express.js':'i-zap','mongodb':'i-database','razorpay':'i-scale','turborepo':'i-layers','docker':'i-package',
+    # venture / domain
+    'edtech':'i-book-open','growth':'i-trending-up','marketing':'i-trending-up','funnels':'i-users','funnel design':'i-users',
 }
 KW = [
     (('openai','gpt','gemini','claude','anthropic','llm',' ml','model','sarvam'),'i-brain'),
@@ -129,6 +131,13 @@ KW = [
     (('query','mongo','prisma','drizzle','redis'),'i-database'),
     (('chart','recharts'),'i-bar-chart-3'),
     (('zod','valid','auth'),'i-shield'),
+    (('automation',),'i-zap'),
+    (('edtech','learning','course','education','training'),'i-book-open'),
+    (('funnel',),'i-users'),
+    (('growth','marketing','acquisition'),'i-trending-up'),
+    (('research','interview'),'i-search'),
+    (('experiment',),'i-flask-conical'),
+    (('strategy','product'),'i-compass'),
 ]
 def icon_for(tag):
     t = tag.strip().lower()
