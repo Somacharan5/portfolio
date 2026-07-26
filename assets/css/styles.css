@@ -319,7 +319,8 @@ img { max-width: 100%; display: block; }
   color: var(--fg-soft); padding: .35rem .65rem; border-radius: 8px;
   border: 1px solid var(--border); background: var(--card);
 }
-.stack li i { font-style: normal; font-size: .85rem; }
+.stack li i { font-style: normal; font-size: .85rem; display: inline-flex; align-items: center; }
+.stack li .tic { width: .9rem; height: .9rem; }
 
 .see-more {
   display: flex; align-items: center; justify-content: center; gap: .6rem;
@@ -678,9 +679,16 @@ body.subpage {
 .pd-head { padding: 1.6rem 0 2.5rem; border-bottom: 1px solid var(--border-soft); }
 .pd-head h1 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 3.4rem); margin-bottom: 1rem; }
 .pd-head .lede { color: var(--fg-soft); font-size: 1.08rem; max-width: 62ch; line-height: 1.65; }
-.pd-actions { display: flex; justify-content: flex-end; margin-top: 1rem; }
+.pd-actions { display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
 .copy-url { display: inline-flex; align-items: center; gap: .45rem; font-size: .88rem; color: #7ea2ff; background: none; border: none; cursor: pointer; font-family: inherit; }
 .copy-url:hover { text-decoration: underline; }
+.pd-btn { display: inline-flex; align-items: center; gap: .45rem; font-size: .85rem; color: var(--fg); background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: .5rem .95rem; transition: border-color .2s, transform .2s; }
+.pd-btn:hover { border-color: var(--muted-2); transform: translateY(-1px); }
+.pd-btn .icon { width: 1em; height: 1em; }
+.pd-btn .icon-sm { width: .78em; height: .78em; opacity: .7; }
+/* real project cover screenshots (replace the placeholder device mocks) */
+.pv-cover { margin: 1.6rem auto -1px; margin-top: auto; width: 100%; display: block; border-radius: 12px 12px 0 0; border: 1px solid rgba(255,255,255,.14); border-bottom: none; box-shadow: 0 -12px 44px rgba(0,0,0,.34); }
+.pd-cover { width: 100%; display: block; border-radius: 14px; border: 1px solid var(--border); margin: 0 0 .5rem; box-shadow: 0 30px 80px -42px rgba(0,0,0,.6); }
 .pd-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2rem; padding: 2rem 0; }
 .pd-meta dt { font-family: "JetBrains Mono", monospace; font-size: .68rem; letter-spacing: .16em; color: var(--muted-2); text-transform: uppercase; margin-bottom: .35rem; }
 .pd-meta dd { font-size: .98rem; color: var(--fg); }

@@ -49,9 +49,11 @@ lede:            <the summary paragraph under the title, 180–220 chars>
 meta_role:       <your title on this project, e.g. "Senior Product Manager">
 meta_built:      <e.g. "Q2 2026">
 meta_updated:    <e.g. "Q3 2026" — or "—" if n/a>
-meta_visit:      <live URL + label, e.g. "atlas.example.com" — or "—" / "Private (NDA)">
-meta_team:       <team shape, e.g. "2 squads · 11 people">
-toolkit:         <6–8 tags, more specific than stack_tags, e.g. STRATEGY, DISCOVERY, AMPLITUDE, LINEAR, FIGMA, SQL, NOTION, GTM>
+meta_visit:      <short status label, e.g. "Live demo" / "Private (NDA)" / "Concept">
+meta_team:       <team shape, e.g. "Solo Builder" / "2 squads · 11 people">
+repo:            <GitHub URL — renders a "GitHub" button; omit if none>
+live:            <live/Vercel URL — renders a "Live Site" button; omit if none>
+toolkit:         <the REAL tech stack from the repo (6–12 tags), e.g. React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Zod>
 
 section_01_why:  <"Why I Built This" — the problem / context. 1–2 short paragraphs, ~250–450 chars total. **bold** the key insight.>
 section_02_approach: <"The Approach" — discovery + process. 1–2 short paragraphs, ~250–450 chars.>

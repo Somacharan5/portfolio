@@ -108,9 +108,13 @@ The whole Work section is now **generated from `content/All projects.md`** by `t
 
 **To edit a project:** change `content/All projects.md`, then run `python3 tools/build-projects.py` — do **not** hand-edit the generated `project-*.html` / `projects.html` (a re-run overwrites them).
 
+**Covers, repo & live links** — ✅ wired into the generator. Per project: drop `project-images/<slug>/cover.jpg` (auto-optimized screenshot) and add `repo:` / `live:` in the source → the card shows the real screenshot and the detail page gets a hero image + **Live Site** / **GitHub** buttons. Tech tags come from the repo's real stack.
+- ✅ **ProdSense AI** — first real one done (cover, React/TS/Vite/shadcn tags, live + repo).
+- [ ] Remaining 17 projects — awaiting screenshots + repos (dropping them in one at a time).
+
 **Still to do on Work:**
-- [ ] **Images** — drop `project-images/<slug>/cover.jpg` (+ optional shots), then extend the generator to emit `<img>` instead of the placeholder gradient/mock.
 - [ ] **Feature on Home** — pick ~3 projects for the "Curated Work" section on `index.html` (still shows the old Atlas/Pulse/Nova placeholders).
+- [ ] **Brand tag icons** (optional polish) — dev-stack tags (React, TS, Tailwind…) currently use generic sprite icons; can add real brand logos to match the reference design.
 
 ---
 

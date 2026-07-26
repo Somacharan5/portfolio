@@ -18,7 +18,7 @@ SRC = os.path.join(BASE, "content", "All projects.md")
 KEYS = {
     'slug','name','type','date','one_liner','card_description','feature_bullets',
     'stack_tags','title','lede','meta_role','meta_built','meta_updated','meta_visit',
-    'meta_team','toolkit','section_01_why','section_02_approach','section_03_decisions',
+    'meta_team','repo','live','toolkit','section_01_why','section_02_approach','section_03_decisions',
     'section_04_learned','cover','shots',
 }
 
@@ -98,6 +98,12 @@ EXACT = {
     'hardware':'i-monitor','drones':'i-rocket','r&d':'i-flask-conical','knowledge':'i-book-open',
     'documentation':'i-file-text','governance':'i-scale','delivery':'i-package','executive':'i-briefcase',
     'scoring':'i-bar-chart-3','customer':'i-user','maps':'i-map-pin',
+    # dev stack
+    'react':'i-compass','next.js':'i-compass','typescript':'i-file-text','javascript':'i-file-text',
+    'vite':'i-zap','tailwind css':'i-pen-line','shadcn ui':'i-layers','shadcn/ui':'i-layers',
+    'tanstack query':'i-database','react hook form':'i-pen-line','zod':'i-shield','recharts':'i-bar-chart-3',
+    'lucide':'i-sparkles','papaparse':'i-file-text','bun':'i-package','node.js':'i-package',
+    'express.js':'i-zap','mongodb':'i-database','razorpay':'i-scale','turborepo':'i-layers','docker':'i-package',
 }
 KW = [
     (('openai','gpt','gemini','claude','anthropic','llm',' ml','model','sarvam'),'i-brain'),
@@ -116,6 +122,13 @@ KW = [
     (('matching','decision','pricing'),'i-compass'),
     (('roadmap','portfolio','process','management'),'i-target'),
     (('electronics','supply','vendor','prototyp','flight','r&d'),'i-flask-conical'),
+    (('react','next','nextjs'),'i-compass'),
+    (('typescript','javascript','node'),'i-file-text'),
+    (('tailwind','shadcn'),'i-pen-line'),
+    (('vite','bun','turbo'),'i-zap'),
+    (('query','mongo','prisma','drizzle','redis'),'i-database'),
+    (('chart','recharts'),'i-bar-chart-3'),
+    (('zod','valid','auth'),'i-shield'),
 ]
 def icon_for(tag):
     t = tag.strip().lower()
@@ -124,11 +137,30 @@ def icon_for(tag):
         if any(k in t for k in keys): return ic
     return 'i-sparkles'
 
+# tag → brand logo file in assets/icons/ (white monochrome SVGs; theme filter flips them in light mode)
+BRAND = {
+    'react':'react','typescript':'typescript','javascript':'javascript','vite':'vite',
+    'tailwind css':'tailwindcss','tailwindcss':'tailwindcss','shadcn ui':'shadcnui','shadcn/ui':'shadcnui',
+    'tanstack query':'tanstackquery','react query':'tanstackquery',
+    'react hook form':'reacthookform','zod':'zod','lucide':'lucide','lucide react':'lucide',
+    'next.js':'nextdotjs','nextjs':'nextdotjs','node.js':'nodedotjs','nodejs':'nodedotjs',
+    'express.js':'express','express':'express','mongodb':'mongodb','bun':'bun','docker':'docker',
+    'turborepo':'turborepo','redis':'redis','prisma':'prisma','drizzle orm':'drizzle','drizzle':'drizzle',
+    'python':'python','anthropic claude':'anthropic','anthropic':'anthropic','claude':'anthropic',
+    'vercel':'vercel','react router':'reactrouter','react router dom':'reactrouter',
+    'razorpay':'razorpay','firebase':'firebase','framer':'framer','framer motion':'framer',
+    'motion.dev':'framer','motion':'framer','greensock':'greensock','gsap':'greensock',
+}
+def tag_li(t):
+    brand = BRAND.get(t.strip().lower())
+    if brand and os.path.exists(os.path.join(BASE, f"assets/icons/{brand}.svg")):
+        ic_html = f'<img class="tic" src="assets/icons/{brand}.svg" alt="" />'
+    else:
+        ic_html = f'<svg class="icon"><use href="#{icon_for(t)}"/></svg>'
+    return f'<li><i>{ic_html}</i>{esc(t)}</li>'
+
 def stack_ul(tags):
-    return "".join(
-        f'<li><i><svg class="icon"><use href="#{icon_for(t)}"/></svg></i>{esc(t)}</li>'
-        for t in tags
-    )
+    return "".join(tag_li(t) for t in tags)
 
 # ---------------- visual placeholders ----------------
 GRADS = [
@@ -147,6 +179,22 @@ MOCK_CHAT = ('<div class="mock browser"><div class="mock-bar"><span></span><span
 MOCKS = [MOCK_BROWSER, MOCK_PHONE, MOCK_CHAT]
 
 ARROW = '<span class="pv-arrow"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>'
+
+# GitHub octocat mark (fill=currentColor so it adapts to theme)
+GH_ICON = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 '
+    '12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.62.07-.62 '
+    '1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 '
+    '0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.81c0 '
+    '.27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>')
+
+COVER_EXTS = ("jpg", "jpeg", "png", "webp")
+def cover_src(slug):
+    """Return the web path to a project's cover image if one exists, else None."""
+    for ext in COVER_EXTS:
+        rel = f"project-images/{slug}/cover.{ext}"
+        if os.path.exists(os.path.join(BASE, rel)):
+            return rel
+    return None
 
 HEAD = '''<!doctype html>
 <html lang="en" data-theme="dark">
@@ -171,9 +219,11 @@ SCRIPTS = '''  <div id="footer"></div>
 # ---------------- deck (projects.html) ----------------
 def deck_card(i, p):
     g1, g2 = GRADS[i % len(GRADS)]
-    mock = MOCKS[i % len(MOCKS)]
+    cover = cover_src(p["slug"])
+    visual = (f'<img class="pv-cover" src="{cover}" alt="{esc(p["name"])} interface" loading="lazy" />'
+              if cover else MOCKS[i % len(MOCKS)])
     feats = list_items(p.get("feature_bullets", ""))[:3]
-    tags = list_items(p.get("stack_tags", ""))[:4]
+    tags = list_items(p.get("stack_tags", ""))
     feat_html = "".join(f"<li>{bold(f)}</li>" for f in feats)
     return f'''      <article class="deck-item">
         <div class="deck-head"><span class="num">{i+1:02d}</span><span class="rule"></span><span class="type">{esc(p["type"])}</span><h3>&nbsp;{esc(p["name"])}</h3><span class="when">{esc(p["date"])}</span></div>
@@ -181,7 +231,7 @@ def deck_card(i, p):
           <a class="project-visual" href="project-{p["slug"]}.html" style="--g1:{g1};--g2:{g2}">
             <div class="pv-head"><p>{render_text(p["one_liner"])}</p>
               {ARROW}</div>
-            {mock}
+            {visual}
           </a>
           <div class="project-info">
             <p class="project-desc">{render_text(p["card_description"])}</p>
@@ -230,6 +280,18 @@ def detail_html(p, prev, nxt):
       </div>
     </section>
 '''
+    actions = ""
+    if p.get("live"):
+        actions += (f'<a class="pd-btn" href="{esc(p["live"])}" target="_blank" rel="noopener">'
+                    f'<svg class="icon"><use href="#i-globe"/></svg> Live Site '
+                    f'<svg class="icon icon-sm"><use href="#i-arrow-up-right"/></svg></a>')
+    if p.get("repo"):
+        actions += (f'<a class="pd-btn" href="{esc(p["repo"])}" target="_blank" rel="noopener">'
+                    f'{GH_ICON} GitHub</a>')
+    actions += '<button class="copy-url"><svg class="icon"><use href="#i-link-2"/></svg> Copy URL</button>'
+    cover = cover_src(p["slug"])
+    cover_html = (f'    <img class="pd-cover reveal" src="{cover}" alt="{esc(p["name"])} interface" loading="lazy" />\n'
+                  if cover else "")
     return f'''{HEAD.format(title=esc(p["name"]) + " — Case Study — Soma Charan")}
 <body class="subpage">
   <div class="rails" aria-hidden="true"></div>
@@ -239,9 +301,9 @@ def detail_html(p, prev, nxt):
     <header class="pd-head reveal">
       <h1>{esc(p.get("title", p["name"]))}</h1>
       <p class="lede">{render_text(p["lede"])}</p>
-      <div class="pd-actions"><button class="copy-url"><svg class="icon"><use href="#i-link-2"/></svg> Copy URL</button></div>
+      <div class="pd-actions">{actions}</div>
     </header>
-    <div class="split" style="border-top:none">
+{cover_html}    <div class="split" style="border-top:none">
       <div class="reveal">
         <dl class="pd-meta">
           <div><dt>Type</dt><dd>{esc(p["type"])}</dd></div>

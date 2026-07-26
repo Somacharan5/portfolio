@@ -27,11 +27,15 @@ feature_bullets:
 - Surfaced emerging trends before they became roadmap priorities.
 
 stack_tags:
-AI
-PRODUCT
-RAG
-DISCOVERY
-STRATEGY
+REACT
+TYPESCRIPT
+VITE
+TAILWIND CSS
+SHADCN UI
+TANSTACK QUERY
+REACT HOOK FORM
+ZOD
+RECHARTS
 
 ------------------------------------------------------------
 
@@ -54,28 +58,40 @@ meta_updated:
 Q3 2026
 
 meta_visit:
-Private Concept
+Live demo
 
 meta_team:
 Solo Builder
 
+repo:
+https://github.com/Somacharan5/Prodsenseai
+
+live:
+https://prodsenseai.vercel.app
+
 toolkit:
 
-OpenAI
+React
 
-Anthropic Claude
+TypeScript
 
-PostgreSQL
+Vite
 
-pgvector
+Tailwind CSS
 
-RAG
+shadcn/ui
 
-n8n
+TanStack Query
 
-Python
+React Hook Form
 
-Google Gemini
+Zod
+
+Recharts
+
+Lucide
+
+PapaParse
 
 ------------------------------------------------------------
 
