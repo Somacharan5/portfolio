@@ -306,43 +306,24 @@
       if (M) { let stop = M.inView(el, () => { run(); if (stop) stop(); }); } else run();
     });
 
-    // photo stack drag (about)
+    // photo stack (about) — auto-cycle every 2s; click advances; pause on hover
     const stack = document.getElementById('photoStack');
     if (stack) {
       const caption = document.getElementById('stackCaption');
-      const order = () => [...stack.querySelectorAll('.stack-card')].sort((a, b) => a.dataset.pos - b.dataset.pos);
-      let drag = null;
-      stack.addEventListener('pointerdown', (e) => {
-        const top = order()[0];
-        if (!top.contains(e.target) && e.target !== top) return;
-        drag = { el: top, x0: e.clientX, y0: e.clientY, dx: 0, dy: 0 };
-        top.setPointerCapture(e.pointerId);
-      });
-      stack.addEventListener('pointermove', (e) => {
-        if (!drag) return;
-        drag.dx = e.clientX - drag.x0; drag.dy = e.clientY - drag.y0;
-        drag.el.style.transform = `translate(${drag.dx}px, ${drag.dy}px) rotate(${drag.dx * 0.06}deg)`;
-      });
-      const release = () => {
-        if (!drag) return;
-        const { el, dx, dy } = drag; drag = null;
-        if (Math.hypot(dx, dy) > 110) {
-          const fly = dx >= 0 ? 480 : -480;
-          const done = () => {
-            const cards = order();
-            cards.forEach((c) => c.dataset.pos = (parseInt(c.dataset.pos) + cards.length - 1) % cards.length);
-            el.style.transform = ''; el.style.opacity = '';
-            if (caption) caption.textContent = order()[0].dataset.caption;
-          };
-          if (M) M.animate(el, { x: fly, opacity: 0 }, { duration: 0.3, easing: 'ease-in' }).finished.then(done);
-          else done();
-        } else if (M) {
-          M.animate(el, { x: 0, y: 0, rotate: 0 }, { easing: SPRING }).finished.then(() => el.style.transform = '');
-        } else el.style.transform = '';
+      const cards = () => [...stack.querySelectorAll('.stack-card')];
+      const front = () => cards().sort((a, b) => a.dataset.pos - b.dataset.pos)[0];
+      const setCap = () => { if (caption) caption.textContent = front().dataset.caption; };
+      const advance = () => {
+        const cs = cards();
+        cs.forEach((c) => (c.dataset.pos = (parseInt(c.dataset.pos) + cs.length - 1) % cs.length));
+        setCap();
       };
-      stack.addEventListener('pointerup', release);
-      stack.addEventListener('pointercancel', release);
-      if (caption) caption.textContent = order()[0].dataset.caption;
+      setCap();
+      let timer = setInterval(advance, 2000);
+      const restart = () => { clearInterval(timer); timer = setInterval(advance, 2000); };
+      stack.addEventListener('click', () => { advance(); restart(); });
+      stack.addEventListener('pointerenter', () => clearInterval(timer));
+      stack.addEventListener('pointerleave', restart);
     }
   }
 })();
