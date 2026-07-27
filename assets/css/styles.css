@@ -620,6 +620,7 @@ body.subpage {
   display: grid; place-items: center; font-size: 4.5rem;
 }
 .stack-card:active { cursor: grabbing; }
+.stack-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .stack-card[data-pos="0"] { transform: rotate(-1deg); z-index: 3; }
 .stack-card[data-pos="1"] { transform: rotate(-7deg) translateX(-26px); z-index: 2; }
 .stack-card[data-pos="2"] { transform: rotate(6deg) translateX(26px); z-index: 1; }
