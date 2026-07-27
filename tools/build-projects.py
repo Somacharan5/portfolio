@@ -159,6 +159,7 @@ BRAND = {
     'vercel':'vercel','react router':'reactrouter','react router dom':'reactrouter',
     'razorpay':'razorpay','firebase':'firebase','framer':'framer','framer motion':'framer',
     'motion.dev':'framer','motion':'framer','greensock':'greensock','gsap':'greensock',
+    'neon':'neon','postgresql':'postgresql','postgres':'postgresql',
 }
 def tag_li(t):
     brand = BRAND.get(t.strip().lower())

@@ -1498,13 +1498,13 @@ The greatest opportunity wasn't digitizing transactions—it was digitizing trus
 === PROJECT 19 ===
 
 slug:
-priority
+aias
 
 name:
-Lead Intelligence Engine
+AIAS Dashboard
 
 type:
-Decision Support Platform
+AI CRM Layer
 
 date:
 Q3 2026
@@ -1522,16 +1522,17 @@ feature_bullets:
 - Operational dashboards for admissions teams.
 
 stack_tags:
-ANALYTICS
-SCORING
-CRM
-PRODUCT
-AI
+REACT
+VITE
+TAILWIND CSS
+REACT ROUTER
+RECHARTS
+NEON
 
 ------------------------------------------------------------
 
 title:
-Lead Intelligence Engine
+AIAS Dashboard
 
 lede:
 
@@ -1549,22 +1550,32 @@ meta_updated:
 Ongoing
 
 meta_visit:
-Private
+Live demo
 
 meta_team:
 Admissions Operations
 
+repo:
+https://github.com/Somacharan5/Lead_ranking_PGPAI
+
+live:
+https://lead-ranking-pgpai.vercel.app
+
 toolkit:
 
-Google Sheets
+React
 
-Apps Script
+Vite
 
-Analytics
+Tailwind CSS
 
-Decision Systems
+React Router
 
-Automation
+Recharts
+
+Neon
+
+PostgreSQL
 
 ------------------------------------------------------------
 

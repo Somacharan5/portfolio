@@ -11,6 +11,10 @@
   const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const toast = (msg) => window.showToast && window.showToast(msg);
   const ic = (n) => `<svg class="icon"><use href="#i-${n}"/></svg>`;
+  // real brand logos (fill=currentColor so they adapt to theme; .icon can't be used — it forces fill:none)
+  const LI_ICON = `<svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3s-2.3 1.57-2.3 3.2V21H9z"/></svg>`;
+  const GH_ICON = `<svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.81c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>`;
+  const X_ICON = `<svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5-6.6L5.4 22H2.3l8-9.2L1.5 2h6.9l4.5 6 5.9-6zm-2.4 18h1.7L7.6 3.8H5.8L16.5 20z"/></svg>`;
 
   const NAV = `
   <header class="nav-wrap">
@@ -30,13 +34,13 @@
               <a class="more-photo" href="guestbook.html" style="background:
                   radial-gradient(120% 90% at 85% -10%, rgba(139,59,245,.55), transparent 60%),
                   linear-gradient(160deg, #ff2d78 0%, #7c1e4b 55%, #131315 100%);">
-                <span class="mp-emoji" aria-hidden="true">${ic('pen-line')}</span>
+                <img class="mp-img" src="assets/media/guestbook.jpg" alt="" loading="lazy" />
                 <span class="mp-text"><b>Guestbook</b><small>Let me know you were here</small></span>
               </a>
               <a class="more-photo" href="bucket-list.html" style="background:
                   radial-gradient(120% 90% at 15% -10%, rgba(14,116,144,.60), transparent 60%),
                   linear-gradient(200deg, #3b4bdd 0%, #232a7a 55%, #131315 100%);">
-                <span class="mp-emoji" aria-hidden="true">${ic('target')}</span>
+                <img class="mp-img" src="assets/media/bucketlist.jpg" alt="" loading="lazy" />
                 <span class="mp-text"><b>Bucket List</b><small>Dreams with a deadline</small></span>
               </a>
               <div class="more-rows">
@@ -59,9 +63,9 @@
               <a class="more-pill" href="contact.html#panelMsg">${ic('message-circle')} Send Message</a>
               <span class="more-icons">
                 <a href="mailto:iamsomacharan@gmail.com" aria-label="Email">${ic('mail')}</a>
-                <a href="https://www.linkedin.com/in/somacharan/" target="_blank" rel="noopener" aria-label="LinkedIn">${ic('briefcase')}</a>
-                <a href="https://github.com/Somacharan5" target="_blank" rel="noopener" aria-label="GitHub">${ic('git-branch')}</a>
-                <a href="https://x.com/iamsomacharan" target="_blank" rel="noopener" aria-label="X">${ic('send')}</a>
+                <a href="https://www.linkedin.com/in/somacharan/" target="_blank" rel="noopener" aria-label="LinkedIn">${LI_ICON}</a>
+                <a href="https://github.com/Somacharan5" target="_blank" rel="noopener" aria-label="GitHub">${GH_ICON}</a>
+                <a href="https://x.com/iamsomacharan" target="_blank" rel="noopener" aria-label="X">${X_ICON}</a>
               </span>
             </div>
           </div>
@@ -138,9 +142,9 @@
         </div>
         <div class="pal-group">Connect</div>
         <div class="pal-grid">
-          <a class="pal-item" href="https://github.com/Somacharan5" target="_blank" rel="noopener"><span class="pi-ic">${ic('git-branch')}</span>GitHub</a>
-          <a class="pal-item" href="https://www.linkedin.com/in/somacharan/" target="_blank" rel="noopener"><span class="pi-ic">${ic('briefcase')}</span>LinkedIn</a>
-          <a class="pal-item" href="https://x.com/iamsomacharan" target="_blank" rel="noopener"><span class="pi-ic">${ic('send')}</span>X (Twitter)</a>
+          <a class="pal-item" href="https://github.com/Somacharan5" target="_blank" rel="noopener"><span class="pi-ic">${GH_ICON}</span>GitHub</a>
+          <a class="pal-item" href="https://www.linkedin.com/in/somacharan/" target="_blank" rel="noopener"><span class="pi-ic">${LI_ICON}</span>LinkedIn</a>
+          <a class="pal-item" href="https://x.com/iamsomacharan" target="_blank" rel="noopener"><span class="pi-ic">${X_ICON}</span>X (Twitter)</a>
         </div>
         <div class="pal-group">Legal</div>
         <div class="pal-grid">

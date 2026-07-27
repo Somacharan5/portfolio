@@ -931,7 +931,8 @@ body.subpage {
   transition: transform .3s cubic-bezier(.23,1,.32,1);
 }
 .more-photo:hover { transform: translateY(-2px); }
-.more-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(10,10,11,.78)); }
+.more-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(10,10,11,.82)); z-index: 1; }
+.mp-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .mp-emoji {
   position: absolute; top: 34%; left: 50%; transform: translate(-50%, -50%);
   font-size: 2.4rem; filter: drop-shadow(0 6px 18px rgba(0,0,0,.45)); z-index: 1;
