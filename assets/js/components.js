@@ -194,33 +194,8 @@
       <button class="sheet-handle" aria-label="Drag down to close"><span></span></button>
       <button class="sheet-close" data-sheet-close aria-label="Close booking sheet">${ic('x')}</button>
       <div class="sheet-body">
-        <div class="cal-card">
-          <div class="cal-side">
-            <span class="av" style="--c1:#1e2b78;--c2:#5a6aef">S</span>
-            <small>Soma Charan</small>
-            <h3>30 Min Meeting</h3>
-            <ul>
-              <li>${ic('check')} Requires confirmation</li>
-              <li>${ic('clock')} 30m</li>
-              <li>${ic('video')} Google Meet</li>
-              <li>${ic('globe')} Asia/Kolkata</li>
-            </ul>
-          </div>
-          <div class="cal-main">
-            <div class="cal-head"><b>July <em>2026</em></b>
-              <div class="cal-nav"><button>‹</button><button>›</button></div></div>
-            <div class="cal-grid">
-              <span class="dow">Sun</span><span class="dow">Mon</span><span class="dow">Tue</span><span class="dow">Wed</span><span class="dow">Thu</span><span class="dow">Fri</span><span class="dow">Sat</span>
-              <span></span><span></span><span></span>
-              <span class="cal-day">1</span><span class="cal-day">2</span><span class="cal-day">3</span><span class="cal-day">4</span>
-              <span class="cal-day">5</span><span class="cal-day">6</span><span class="cal-day">7</span><span class="cal-day">8</span><span class="cal-day">9</span><span class="cal-day today">10</span><span class="cal-day on">11</span>
-              <span class="cal-day">12</span><span class="cal-day on">13</span><span class="cal-day on">14</span><span class="cal-day on">15</span><span class="cal-day on">16</span><span class="cal-day on">17</span><span class="cal-day on">18</span>
-              <span class="cal-day">19</span><span class="cal-day on">20</span><span class="cal-day on">21</span><span class="cal-day on">22</span><span class="cal-day on">23</span><span class="cal-day on">24</span><span class="cal-day on">25</span>
-              <span class="cal-day">26</span><span class="cal-day on">27</span><span class="cal-day on">28</span><span class="cal-day on">29</span><span class="cal-day on">30</span><span class="cal-day on">31</span>
-            </div>
-          </div>
-        </div>
-        <p class="sheet-note">Demo calendar — real scheduling (Cal.com) wired later.</p>
+        <div id="cal-sheet" class="cal-embed"></div>
+        <p class="sheet-note">Scheduling by Cal.com · <a href="contact.html">Open the contact page →</a></p>
       </div>
     </div>
   </div>`;
@@ -357,11 +332,21 @@
   let sheetOpen = false;
   let sheetBusy = false;
 
+  let calReady = false;
+  function initCal() {
+    if (calReady) return;
+    calReady = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    window.Cal("init", { origin: "https://cal.com" });
+    window.Cal("inline", { elementOrSelector: "#cal-sheet", calLink: "somacharan", layout: "month_view" });
+    window.Cal("ui", { theme: document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark', styles: { branding: { brandColor: "#ff2d78" } }, hideEventTypeDetails: false, layout: "month_view" });
+  }
   function openSheet(trigger) {
     if (sheetOpen) return;
     sheetOpen = true;
     sheetTrigger = trigger || document.activeElement;
     sheet.classList.add('open');
+    initCal();
     document.body.style.overflow = 'hidden';
     if (M && !REDUCED) {
       M.animate(sheetBg, { opacity: [0, 1] }, { duration: 0.2, easing: 'ease-out' });

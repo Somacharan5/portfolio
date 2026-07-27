@@ -709,6 +709,9 @@ body.subpage {
 .project-visual:hover .n2 .ps-front { transform: translate(-14%,-52%) rotate(5deg) scale(1.03); }
 .project-visual:hover .n2 .ps-back1 { transform: translate(-86%,-50%) rotate(-8deg); }
 @media (prefers-reduced-motion: reduce) { .ps-img { transition: none; } }
+/* Cal.com booking embed inside the booking sheet */
+.cal-embed { width: 100%; min-height: 560px; border-radius: 12px; overflow: hidden; }
+.sheet-note a { color: var(--fg); text-decoration: underline; }
 .pd-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2rem; padding: 2rem 0; }
 .pd-meta dt { font-family: "JetBrains Mono", monospace; font-size: .68rem; letter-spacing: .16em; color: var(--muted-2); text-transform: uppercase; margin-bottom: .35rem; }
 .pd-meta dd { font-size: .98rem; color: var(--fg); }
