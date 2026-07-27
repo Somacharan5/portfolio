@@ -208,6 +208,12 @@
   document.body.insertAdjacentHTML('beforeend', PALETTE);
   document.body.insertAdjacentHTML('beforeend', SHEET);
 
+  // pre-warm Cal.com (preconnect + load embed + init) on idle so the booking sheet opens fast
+  ['https://app.cal.com', 'https://cal.com'].forEach((h) => {
+    const l = document.createElement('link'); l.rel = 'preconnect'; l.href = h; document.head.appendChild(l);
+  });
+  (window.requestIdleCallback || ((f) => setTimeout(f, 800)))(() => initCal());
+
   // active link
   document.querySelectorAll('.nav-links a[data-page]').forEach((a) => {
     if (a.dataset.page === page) a.classList.add('active');
