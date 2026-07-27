@@ -1222,6 +1222,10 @@ html.mo main { animation: pageIn .3s cubic-bezier(.32,.72,0,1) both; }
 }
 .flip-emoji { font-size: 64px; line-height: 1; filter: drop-shadow(0 10px 24px rgba(0,0,0,.35)); }
 .flip-cap-serif { font-family: "Instrument Serif", serif; font-style: italic; color: #fff; font-size: 1.25rem; text-align: center; padding: 0 1.4rem; }
+.flip-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 0; }
+.flip-face::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 48%, rgba(0,0,0,.62)); pointer-events: none; }
+.flip-front .flip-cap-mono, .flip-back .flip-cap-serif { position: absolute; left: 0; right: 0; bottom: 1rem; z-index: 3; text-shadow: 0 2px 14px rgba(0,0,0,.8); }
+.flip-front .flip-cap-mono { color: rgba(255,255,255,.85); }
 .flip-face::after {
   content: ""; position: absolute; top: -60%; bottom: -60%; left: 0; width: 34%;
   background: linear-gradient(105deg, transparent, rgba(255,255,255,.13), transparent);
