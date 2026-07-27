@@ -307,6 +307,37 @@ def build_projects_html(projects):
 {SCRIPTS}'''
     open(os.path.join(BASE, "projects.html"), "w", encoding="utf-8").write(body)
 
+# ---------------- home "Curated Work" (index.html, between FEATURED markers) ----------------
+FEATURED = ["drone", "xads", "aias"]  # slugs featured on the home page
+def home_card(p, i):
+    g1, g2 = GRADS[i % len(GRADS)]
+    cover = cover_src(p["slug"])
+    visual = (f'<img class="pv-cover" src="{cover}" alt="{esc(p["name"])} interface" loading="lazy" />'
+              if cover else MOCKS[i % len(MOCKS)])
+    feats = "".join(f"<li>{bold(f)}</li>" for f in list_items(p.get("feature_bullets", ""))[:4])
+    return f'''        <article class="project reveal">
+          <a class="project-visual" href="project-{p["slug"]}.html" style="--g1:{g1};--g2:{g2}">
+            <div class="pv-head"><p>{render_text(p["one_liner"])}</p>
+              {ARROW}</div>
+            {visual}
+          </a>
+          <div class="project-info">
+            <h3 class="project-name"><span class="dash"></span>{esc(p["name"])}</h3>
+            <p class="project-desc">{render_text(p["card_description"])}</p>
+            <ul class="feat">{feats}</ul>
+            <ul class="stack">{stack_ul(list_items(p.get("stack_tags", "")))}</ul>
+          </div>
+        </article>'''
+
+def build_home(projects):
+    bysl = {p["slug"]: p for p in projects}
+    cards = "\n\n".join(home_card(bysl[s], i) for i, s in enumerate(FEATURED) if s in bysl)
+    path = os.path.join(BASE, "index.html")
+    html = open(path, encoding="utf-8").read()
+    html = re.sub(r'(<!-- FEATURED:START -->).*?(<!-- FEATURED:END -->)',
+                  lambda m: m.group(1) + "\n" + cards + "\n        " + m.group(2), html, flags=re.S)
+    open(path, "w", encoding="utf-8").write(html)
+
 # ---------------- detail page ----------------
 SECTIONS = [
     ("01", "Why I Built This", "section_01_why"),
@@ -381,6 +412,7 @@ if __name__ == "__main__":
     projects = load()
     build_projects_html(projects)
     build_details(projects)
+    build_home(projects)
     print(f"Built projects.html + {len(projects)} detail pages:")
     for i, p in enumerate(projects):
         print(f'  {i+1:02d}  project-{p["slug"]}.html  —  {p["name"]}')
